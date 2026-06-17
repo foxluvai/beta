@@ -156,7 +156,6 @@
       box-shadow: var(--glow-avatar);
     }
 
-    /* Khung viền Discord decoration */
     .avatar-decoration {
       position: absolute;
       inset: -12.5%;
@@ -495,7 +494,6 @@
           alt="Avatar"
           loading="lazy"
         />
-        <!-- Khung viền Discord random mỗi lần load -->
         <img id="avatar-deco" class="avatar-decoration" src="" alt="" />
         <span class="online-dot" aria-label="Online" title="Online"></span>
       </div>
@@ -560,7 +558,7 @@
     </article>
 
     <p class="footer-text" style="position:absolute; bottom:1rem;">
-      made with code ♥ · foxluvai © 2026
+      made by fox ♥ · foxluvai © 2026
     </p>
   </div>
 
@@ -709,9 +707,6 @@
       }
     `;
     document.head.appendChild(s);
-    /* =============================================
-       5. DISCORD AVATAR DECORATION - RANDOM MỖI LẦN MỞ
-    ============================================= */
     (function () {
       const BASE = 'https://cdn.discordapp.com/avatar-decoration-presets/';
       const Q    = '.png?size=240&passthrough=true';
