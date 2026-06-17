@@ -1,4 +1,4 @@
-const DATA_URL = './discord-borders.json'; 
+const DATA_URL = 'https://raw.githubusercontent.com/foxluvai/profile/main/discord-borders.json'; 
 
 const DECO_IMG_ID = 'avatar-deco';
 
