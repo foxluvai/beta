@@ -478,7 +478,7 @@
 <body>
 
   <div id="overlay" role="button" aria-label="Click to enter">
-    <span class="overlay-text"><span class="prompt-arrow">&gt; </span>Thông tin của tớ ở đây nè. Bấm đi ♥ </span>
+    <span class="overlay-text"><span class="prompt-arrow">&gt; </span>Thông tin của tớ ở đây nè ♥ </span>
   </div>
 
   <audio id="bg-music" loop>
@@ -494,7 +494,6 @@
   <div class="page-wrapper">
     <article class="card" aria-label="Profile card">
 
-      <!-- Avatar + decoration overlay + online dot -->
       <div class="avatar-wrapper">
         <img
           class="avatar"
@@ -502,7 +501,6 @@
           alt="Avatar"
           loading="lazy"
         />
-        <!-- #avatar-deco: src được gán tự động bởi borders-loader.js -->
         <img id="avatar-deco" class="avatar-decoration" src="" alt="" />
         <span class="online-dot" aria-label="Online" title="Online"></span>
       </div>
@@ -717,24 +715,9 @@
     `;
     document.head.appendChild(s);
 
-    /*
-     * ──────────────────────────────────────────────────────
-     *  Avatar Decoration đã được tách ra file riêng:
-     *    • Dữ liệu  → discord-borders.json
-     *    • Logic    → borders-loader.js  (load ở cuối <body>)
-     *
-     *  Để đổi border thủ công, gọi: refreshBorder()
-     *  (hàm này được export ra window bởi borders-loader.js)
-     * ──────────────────────────────────────────────────────
-     */
 
   </script>
 
-  <!-- ─────────────────────────────────────────────────────── -->
-  <!--  BORDERS LOADER                                          -->
-  <!--  Đọc discord-borders.json → random → gán #avatar-deco   -->
-  <!--  Đặt TRƯỚC </body> để DOM đã sẵn sàng khi script chạy  -->
-  <!-- ─────────────────────────────────────────────────────── -->
   <script src="borders-loader.js"></script>
 
 </body>
