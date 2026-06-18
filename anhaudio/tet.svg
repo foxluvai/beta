@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#cc0000"/>
+      <stop offset="100%" stop-color="#7a0000"/>
+    </radialGradient>
+  </defs>
+  <!-- Nền đỏ -->
+  <circle cx="100" cy="100" r="100" fill="url(#bg)"/>
+  <!-- Chữ Phúc (福) -->
+  <text x="100" y="115" text-anchor="middle" font-family="serif" font-size="80" fill="#ffd700" font-weight="bold">福</text>
+  <!-- Hoa văn góc -->
+  <circle cx="20" cy="20" r="8" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.6"/>
+  <circle cx="180" cy="20" r="8" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.6"/>
+  <circle cx="20" cy="180" r="8" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.6"/>
+  <circle cx="180" cy="180" r="8" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.6"/>
+  <!-- Viền vàng -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.5"/>
+</svg>
