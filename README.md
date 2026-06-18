@@ -8,10 +8,10 @@
 
 - **Intro overlay** — màn hình chào với hiệu ứng nhấp nháy, bấm vào để vào trang
 - **Nhạc nền** — tự động phát khi bấm vào overlay, có nút toggle bật/tắt
-- **Avatar decoration ngẫu nhiên** — mỗi lần tải trang, khung viền hoạt ảnh (lấy từ Discord CDN) sẽ được chọn ngẫu nhiên từ danh sách trong `discord-borders.json`
+- **Avatar decoration ngẫu nhiên** — mỗi lần tải trang, khung viền hoạt ảnh (lưu local trong thư mục `borders/`) sẽ được chọn ngẫu nhiên bởi `borders-loader.js`
 - **Hiệu ứng glitch** trên tên hiển thị
 - **Typewriter bio** — dòng bio tự gõ và xóa xoay vòng
-- **Particle background** — 90 hạt tím bay nhẹ trên nền
+- **Particle background** — 150 hạt tím bay nhẹ trên nền
 - **Badges** — Verified · Developer · Music · Vietnam
 - **QR donate** — quét mã chuyển khoản, mọi ngân hàng
 - **Mạng xã hội** — Facebook, TikTok, Discord, Email
@@ -26,11 +26,12 @@
 ```
 📁 profile/
  ├── index.html              # Giao diện chính
- ├── borders-loader.js       # Logic fetch + random border
- ├── borders                 # Danh sách avatar decoration
+ ├── borders-loader.js       # Logic chọn ngẫu nhiên border (local)
+ ├── borders/                # Các file ảnh khung viền (phoenix, sword, ramen, bat, firecrackers, rainbow)
+ ├── anhaudio/                # Ảnh cover cho từng bài nhạc
+ ├── audio/                   # File nhạc nền (Audio1.mp3, Audio2.mp3, Audio3.mp3)
  ├── Avatar.jpg              # Ảnh đại diện
- ├── QRCode.jpg              # Mã QR chuyển khoản
- └── Audio.mp3               # Nhạc nền
+ └── QRCode.jpg              # Mã QR chuyển khoản
 ```
 
 ---
@@ -44,7 +45,7 @@
 | HTML / CSS / JS | Thuần, không framework |
 | Font | [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) · [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) |
 | Icon | [Font Awesome 6.5](https://fontawesome.com) |
-| Avatar decoration | Discord CDN (`cdn.discordapp.com`) |
+| Avatar decoration | Ảnh PNG local trong thư mục `borders/` |
 | Hosting | GitHub Pages |
 
 ---
@@ -55,7 +56,7 @@
 |---|---|
 | Facebook | [facebook.com/march9thh](https://www.facebook.com/march9thh) |
 | TikTok | [@foxloveai](https://www.tiktok.com/@foxloveai) |
-| Discord | [692932677321621525](https://discord.com/users/692932677321621525/) |
+| Discord | [Server Discord](https://discord.gg/UqKa6npGhZ) |
 | Email | foxluvai93@gmail.com |
 
 ---

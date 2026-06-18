@@ -1094,7 +1094,11 @@
           konamiIdx = 0;
           setTimeout(() => document.body.style.animation = '', 4000);
         }
-      } else { konamiIdx = 0; }
+      } else {
+        // Gõ sai: nếu phím vừa bấm trùng với bước đầu tiên của dãy,
+        // coi như bắt đầu lại từ bước 1 thay vì reset cứng về 0.
+        konamiIdx = (e.keyCode === KONAMI[0]) ? 1 : 0;
+      }
     });
 
     const s = document.createElement('style');
