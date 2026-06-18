@@ -46,7 +46,7 @@
 | Font | [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) · [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) |
 | Icon | [Font Awesome 6.5](https://fontawesome.com) |
 | Avatar decoration | Ảnh PNG local trong thư mục `borders/` |
-| Hosting | GitHub Pages |
+| Hosting | Cloudflare Pages |
 
 ---
 
