@@ -28,8 +28,8 @@
  ├── index.html              # Giao diện chính
  ├── borders-loader.js       # Logic chọn ngẫu nhiên border (local)
  ├── borders/                # Các file ảnh khung viền (phoenix, sword, ramen, bat, firecrackers, rainbow)
- ├── anhaudio/                # Ảnh cover cho từng bài nhạc
- ├── audio/                   # File nhạc nền (Audio1.mp3, Audio2.mp3, Audio3.mp3)
+ ├── anhaudio/               # Ảnh cover cho từng bài nhạc
+ ├── audio/                  # File nhạc nền (Audio1.mp3, Audio2.mp3, Audio3.mp3)
  ├── Avatar.jpg              # Ảnh đại diện
  └── QRCode.jpg              # Mã QR chuyển khoản
 ```
@@ -56,7 +56,7 @@
 |---|---|
 | Facebook | [facebook.com/march9thh](https://www.facebook.com/march9thh) |
 | TikTok | [@foxloveai](https://www.tiktok.com/@foxloveai) |
-| Discord | [Server Discord](https://discord.gg/UqKa6npGhZ) |
+| Discord | [˙ ✩°˖Thời gian dừng lại˖°✩ ˙](https://discord.gg/UqKa6npGhZ) |
 | Email | foxluvai93@gmail.com |
 
 ---
