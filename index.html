@@ -594,6 +594,9 @@
       background: var(--accent);
       cursor: pointer;
       transition: transform 0.2s, background 0.2s;
+      /* Track cao 3px nhưng thumb cao 14px, nên cần kéo thumb lên để tâm
+         của nó trùng với tâm track (Safari/iOS không tự căn giữa thumb). */
+      margin-top: -5.5px;
     }
 
     .volume-slider::-webkit-slider-thumb:hover {
