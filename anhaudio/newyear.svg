@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0a0a14"/>
+    </radialGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg2)"/>
+  <!-- Stars -->
+  <circle cx="40" cy="30" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="100" cy="15" r="1" fill="white" opacity="0.5"/>
+  <circle cx="230" cy="25" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="270" cy="45" r="1" fill="white" opacity="0.8"/>
+  <circle cx="60" cy="80" r="1" fill="white" opacity="0.4"/>
+  <circle cx="280" cy="100" r="1.5" fill="white" opacity="0.5"/>
+  <!-- Firework 1 -->
+  <g transform="translate(100,100)">
+    <line x1="0" y1="0" x2="0" y2="-40" stroke="#ffd700" stroke-width="2" opacity="0.9"/>
+    <line x1="0" y1="0" x2="28" y2="-28" stroke="#ffd700" stroke-width="2" opacity="0.9"/>
+    <line x1="0" y1="0" x2="40" y2="0" stroke="#ffd700" stroke-width="2" opacity="0.9"/>
+    <line x1="0" y1="0" x2="28" y2="28" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+    <line x1="0" y1="0" x2="-28" y2="28" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+    <line x1="0" y1="0" x2="-40" y2="0" stroke="#ffd700" stroke-width="2" opacity="0.9"/>
+    <line x1="0" y1="0" x2="-28" y2="-28" stroke="#ffd700" stroke-width="2" opacity="0.9"/>
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="5" fill="#fff7aa"/>
+  </g>
+  <!-- Firework 2 -->
+  <g transform="translate(210,80)">
+    <line x1="0" y1="0" x2="0" y2="-30" stroke="#ff6b9d" stroke-width="1.5" opacity="0.9"/>
+    <line x1="0" y1="0" x2="21" y2="-21" stroke="#ff6b9d" stroke-width="1.5" opacity="0.9"/>
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#ff6b9d" stroke-width="1.5" opacity="0.9"/>
+    <line x1="0" y1="0" x2="21" y2="21" stroke="#ff6b9d" stroke-width="1.5" opacity="0.7"/>
+    <line x1="0" y1="0" x2="-21" y2="21" stroke="#ff6b9d" stroke-width="1.5" opacity="0.7"/>
+    <line x1="0" y1="0" x2="-30" y2="0" stroke="#ff6b9d" stroke-width="1.5" opacity="0.9"/>
+    <line x1="0" y1="0" x2="-21" y2="-21" stroke="#ff6b9d" stroke-width="1.5" opacity="0.9"/>
+    <line x1="0" y1="0" x2="0" y2="30" stroke="#ff6b9d" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="0" cy="0" r="4" fill="#ffaac5"/>
+  </g>
+  <!-- 2026 text -->
+  <text x="150" y="195" font-family="Georgia,serif" font-size="58" fill="#ffd700" text-anchor="middle" font-weight="bold" opacity="0.95">2026</text>
+  <text x="150" y="225" font-family="Georgia,serif" font-size="13" fill="#ffffff" text-anchor="middle" letter-spacing="3" opacity="0.7">HAPPY NEW YEAR</text>
+  <!-- Champagne glasses -->
+  <line x1="130" y1="255" x2="145" y2="240" stroke="#ffd700" stroke-width="2"/>
+  <line x1="170" y1="255" x2="155" y2="240" stroke="#ffd700" stroke-width="2"/>
+  <text x="150" y="260" font-size="22" text-anchor="middle">🥂</text>
+</svg>

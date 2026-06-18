@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="bg3" cx="50%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#2d0a3d"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </radialGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg3)"/>
+  <!-- Moon -->
+  <circle cx="220" cy="60" r="35" fill="#fff3a3" opacity="0.9"/>
+  <circle cx="235" cy="50" r="32" fill="#2d0a3d"/>
+  <!-- Stars -->
+  <circle cx="50" cy="40" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="90" cy="20" r="1" fill="white" opacity="0.5"/>
+  <circle cx="160" cy="35" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="30" cy="90" r="1" fill="white" opacity="0.4"/>
+  <!-- Jack-o-lantern -->
+  <ellipse cx="150" cy="175" rx="60" ry="55" fill="#e87722"/>
+  <!-- Stem -->
+  <rect x="143" y="118" width="14" height="20" rx="5" fill="#5c3317"/>
+  <!-- Face - triangle eyes -->
+  <polygon points="122,158 108,175 136,175" fill="#1a0a00"/>
+  <polygon points="178,158 164,175 192,175" fill="#1a0a00"/>
+  <!-- Nose -->
+  <polygon points="150,170 143,183 157,183" fill="#1a0a00"/>
+  <!-- Mouth -->
+  <path d="M115,195 Q130,215 150,210 Q170,215 185,195" fill="#1a0a00"/>
+  <rect x="120" y="193" width="60" height="14" rx="0" fill="#e87722"/>
+  <rect x="125" y="195" width="10" height="12" fill="#1a0a00"/>
+  <rect x="142" y="195" width="16" height="12" fill="#1a0a00"/>
+  <rect x="165" y="195" width="10" height="12" fill="#1a0a00"/>
+  <!-- Inner glow -->
+  <ellipse cx="150" cy="180" rx="45" ry="40" fill="#ff9a3c" opacity="0.15"/>
+  <!-- Bats -->
+  <path d="M50,120 Q40,110 30,115 Q40,120 40,125 Q50,120 60,125 Q60,120 70,115 Q60,110 50,120Z" fill="#200030" opacity="0.8"/>
+  <path d="M260,100 Q250,90 240,95 Q250,100 250,105 Q260,100 270,105 Q270,100 280,95 Q270,90 260,100Z" fill="#200030" opacity="0.8"/>
+  <text x="150" y="265" font-family="Georgia,serif" font-size="14" fill="#e87722" text-anchor="middle" letter-spacing="2">THIS IS HALLOWEEN</text>
+</svg>

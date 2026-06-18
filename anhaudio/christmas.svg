@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a4a2e"/>
+      <stop offset="100%" stop-color="#0d1f14"/>
+    </radialGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg)"/>
+  <!-- Snow dots -->
+  <circle cx="30" cy="40" r="3" fill="white" opacity="0.6"/>
+  <circle cx="80" cy="20" r="2" fill="white" opacity="0.4"/>
+  <circle cx="200" cy="30" r="3" fill="white" opacity="0.5"/>
+  <circle cx="260" cy="50" r="2" fill="white" opacity="0.6"/>
+  <circle cx="140" cy="15" r="2" fill="white" opacity="0.5"/>
+  <circle cx="50" cy="280" r="3" fill="white" opacity="0.4"/>
+  <circle cx="250" cy="270" r="2" fill="white" opacity="0.6"/>
+  <!-- Christmas tree -->
+  <polygon points="150,60 90,180 210,180" fill="#2d6a4f"/>
+  <polygon points="150,90 95,195 205,195" fill="#40916c"/>
+  <polygon points="150,120 100,215 200,215" fill="#52b788"/>
+  <!-- Trunk -->
+  <rect x="135" y="215" width="30" height="30" fill="#8b4513"/>
+  <!-- Star -->
+  <polygon points="150,45 155,60 170,60 158,68 163,83 150,74 137,83 142,68 130,60 145,60" fill="#ffd700"/>
+  <!-- Ornaments -->
+  <circle cx="120" cy="155" r="8" fill="#e63946"/>
+  <circle cx="175" cy="170" r="8" fill="#ffd700"/>
+  <circle cx="145" cy="185" r="7" fill="#e63946"/>
+  <circle cx="165" cy="148" r="7" fill="#90e0ef"/>
+  <!-- Lights -->
+  <circle cx="130" cy="135" r="4" fill="#ffb703" opacity="0.9"/>
+  <circle cx="155" cy="125" r="4" fill="#fb8500" opacity="0.9"/>
+  <circle cx="175" cy="140" r="4" fill="#e63946" opacity="0.9"/>
+  <!-- Text -->
+  <text x="150" y="265" font-family="Georgia,serif" font-size="13" fill="#ffd700" text-anchor="middle" letter-spacing="2">MERRY CHRISTMAS</text>
+</svg>
