@@ -564,18 +564,32 @@
       -webkit-appearance: none;
       appearance: none;
       flex: 1;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 2px;
+      /* Vùng input cao hơn để dễ chạm/kéo trên di động, track hiển thị vẫn mảnh
+         nhờ ::-webkit-slider-runnable-track / ::-moz-range-track ở dưới. */
+      height: 22px;
+      background: transparent;
       outline: none;
       cursor: pointer;
+      touch-action: none;
+    }
+
+    .volume-slider::-webkit-slider-runnable-track {
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .volume-slider::-moz-range-track {
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .volume-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
       background: var(--accent);
       cursor: pointer;
@@ -588,8 +602,8 @@
     }
     
     .volume-slider::-moz-range-thumb {
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       border: none;
       border-radius: 50%;
       background: var(--accent);
@@ -870,6 +884,47 @@
 
     let musicPlaying = false;
 
+    // --- Volume fix (iOS Safari ignores HTMLMediaElement.volume) ---
+    // Trên iOS, audio.volume bị khoá cứng theo nút âm lượng vật lý, gán giá trị
+    // qua JS không có tác dụng. Dùng Web Audio API (GainNode) để chỉnh âm lượng
+    // thực tế bằng cách khuếch đại/giảm tín hiệu, hoạt động trên mọi thiết bị.
+    let audioCtx = null;
+    let gainNode = null;
+    let audioGraphReady = false;
+
+    function setupAudioGraph() {
+      if (audioGraphReady) return;
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return; // browser quá cũ, sẽ dùng fallback bgMusic.volume
+        audioCtx = new AudioContextClass();
+        const sourceNode = audioCtx.createMediaElementSource(bgMusic);
+        gainNode = audioCtx.createGain();
+        sourceNode.connect(gainNode).connect(audioCtx.destination);
+        // Khi đã nối qua Web Audio, để bgMusic.volume cố định ở mức tối đa và
+        // điều khiển âm lượng thật hoàn toàn qua gainNode để tránh xung đột.
+        bgMusic.volume = 1;
+        gainNode.gain.value = volumeSlider ? parseFloat(volumeSlider.value) : 0.35;
+        audioGraphReady = true;
+      } catch (err) {
+        console.warn('Không thể khởi tạo Web Audio graph, dùng fallback volume:', err);
+      }
+    }
+
+    function resumeAudioGraph() {
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
+      }
+    }
+
+    function applyVolume(volume) {
+      if (gainNode) {
+        gainNode.gain.value = volume;
+      } else {
+        bgMusic.volume = volume;
+      }
+    }
+
     bgMusic.src = randomTrack.src;
     bgMusic.loop = true; // Lặp bài hát
     playerCover.src = randomTrack.cover;
@@ -900,7 +955,12 @@
     overlay.addEventListener('click', () => {
       overlay.classList.add('fade-out');
 
-      bgMusic.volume = volumeSlider ? parseFloat(volumeSlider.value) : 0.35;
+      // setupAudioGraph() phải được gọi trong cùng một user-gesture (click) này
+      // để iOS Safari cho phép tạo/resume AudioContext.
+      setupAudioGraph();
+      resumeAudioGraph();
+      applyVolume(volumeSlider ? parseFloat(volumeSlider.value) : 0.35);
+
       bgMusic.play().then(() => {
         musicToggle.style.display = 'flex';
         updatePlayState(true);
@@ -913,6 +973,7 @@
     });
 
     musicToggle.addEventListener('click', () => {
+      resumeAudioGraph();
       if (musicPlaying) {
         bgMusic.pause();
         updatePlayState(false);
@@ -923,6 +984,7 @@
     });
 
     btnPlayPause.addEventListener('click', () => {
+      resumeAudioGraph();
       if (musicPlaying) {
         bgMusic.pause();
         updatePlayState(false);
@@ -935,7 +997,7 @@
     if (volumeSlider) {
       volumeSlider.addEventListener('input', (e) => {
         const volume = parseFloat(e.target.value);
-        bgMusic.volume = volume;
+        applyVolume(volume);
 
         if (volume === 0) {
           volumeIcon.className = 'fa-solid fa-volume-xmark';
