@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Outer glow ring -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(230,57,70,0.3)"/>
+    </radialGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#e63946"/>
+      <stop offset="25%"  stop-color="#2d9d5c"/>
+      <stop offset="50%"  stop-color="#ffd700"/>
+      <stop offset="75%"  stop-color="#e63946"/>
+      <stop offset="100%" stop-color="#2d9d5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#glow)"/>
+  <!-- Main ring -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#ringGrad)" stroke-width="8" stroke-dasharray="5,3"/>
+  <!-- Inner ring subtle -->
+  <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(255,215,0,0.25)" stroke-width="2"/>
+  <!-- Corner decorations -->
+  <!-- Top: Star -->
+  <polygon points="100,6 103,15 113,15 105,21 108,30 100,24 92,30 95,21 87,15 97,15"
+           fill="#ffd700" stroke="#b8860b" stroke-width="0.5"/>
+  <!-- Right: Bell -->
+  <g transform="translate(187,90)">
+    <path d="M0,-12 Q8,-12 8,0 L8,8 L-8,8 L-8,0 Q-8,-12 0,-12Z" fill="#ffd700" stroke="#b8860b" stroke-width="0.5"/>
+    <rect x="-3" y="-14" width="6" height="4" rx="2" fill="#b8860b"/>
+    <circle cx="0" cy="10" r="2.5" fill="#b8860b"/>
+  </g>
+  <!-- Left: Bell -->
+  <g transform="translate(13,90)">
+    <path d="M0,-12 Q8,-12 8,0 L8,8 L-8,8 L-8,0 Q-8,-12 0,-12Z" fill="#ffd700" stroke="#b8860b" stroke-width="0.5"/>
+    <rect x="-3" y="-14" width="6" height="4" rx="2" fill="#b8860b"/>
+    <circle cx="0" cy="10" r="2.5" fill="#b8860b"/>
+  </g>
+  <!-- Bottom: Holly berries -->
+  <g transform="translate(100,192)">
+    <circle cx="-4" cy="-4" r="4" fill="#2d9d5c"/>
+    <circle cx="4" cy="-4" r="4" fill="#2d9d5c"/>
+    <circle cx="0" cy="-7" r="4" fill="#2d9d5c"/>
+    <circle cx="-2" cy="-5" r="2.5" fill="#e63946"/>
+    <circle cx="3" cy="-6" r="2.5" fill="#e63946"/>
+    <circle cx="0" cy="-2" r="2" fill="#e63946"/>
+  </g>
+  <!-- Small snowflakes around ring -->
+  <text x="40"  y="25"  font-size="10" fill="white" opacity="0.8" text-anchor="middle">❄</text>
+  <text x="160" y="25"  font-size="10" fill="white" opacity="0.8" text-anchor="middle">❄</text>
+  <text x="22"  y="160" font-size="10" fill="white" opacity="0.8" text-anchor="middle">❄</text>
+  <text x="178" y="160" font-size="10" fill="white" opacity="0.8" text-anchor="middle">❄</text>
+  <!-- Small ornaments on ring -->
+  <circle cx="55"  cy="18"  r="5" fill="#e63946" stroke="#8b0000" stroke-width="1"/>
+  <circle cx="145" cy="18"  r="5" fill="#2d9d5c" stroke="#1a5c35" stroke-width="1"/>
+  <circle cx="18"  cy="55"  r="5" fill="#ffd700"  stroke="#b8860b" stroke-width="1"/>
+  <circle cx="18"  cy="145" r="5" fill="#e63946" stroke="#8b0000" stroke-width="1"/>
+  <circle cx="182" cy="55"  r="5" fill="#2d9d5c" stroke="#1a5c35" stroke-width="1"/>
+  <circle cx="182" cy="145" r="5" fill="#ffd700"  stroke="#b8860b" stroke-width="1"/>
+  <circle cx="55"  cy="182" r="5" fill="#e63946" stroke="#8b0000" stroke-width="1"/>
+  <circle cx="145" cy="182" r="5" fill="#2d9d5c" stroke="#1a5c35" stroke-width="1"/>
+</svg>
