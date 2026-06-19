@@ -488,7 +488,8 @@
       height: 6px;
       background: rgba(255,255,255,0.1);
       border-radius: 3px;
-      cursor: pointer;
+      cursor: default;
+      pointer-events: none;
       position: relative;
     }
 
@@ -977,12 +978,8 @@
       playerTime.textContent = `0:00 / ${formatTime(bgMusic.duration)}`;
     });
 
-    progressContainer.addEventListener('click', (e) => {
-      const rect = progressContainer.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const percent = clickX / rect.width;
-      bgMusic.currentTime = percent * bgMusic.duration;
-    });
+
+
 
 
     const bioLines = [
