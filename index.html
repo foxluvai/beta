@@ -564,7 +564,7 @@
       -webkit-appearance: none;
       appearance: none;
       flex: 1;
-      /* nhờ ::-webkit-slider-runnable-track / ::-moz-range-track ở dưới. */
+
       height: 22px;
       background: transparent;
       outline: none;
@@ -624,38 +624,7 @@
       margin-top: -0.5rem;
     }
 
-    #music-toggle {
-      position: fixed;
-      top: 1.2rem;
-      right: 1.2rem;
-      z-index: 100;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      cursor: pointer;
-      display: none; 
-      align-items: center;
-      justify-content: center;
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
-    }
 
-    #music-toggle:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: rgba(139,92,246,0.12);
-    }
-
-    #music-toggle.playing i::before {
-      content: '\f028'; 
-    }
-
-    #music-toggle.playing {
-      animation: spin-slow 3s linear infinite;
-    }
 
     @keyframes spin-slow {
       from { transform: rotate(0deg); }
@@ -688,10 +657,6 @@
 
   <audio id="bg-music">
   </audio>
-
-  <button id="music-toggle" aria-label="Toggle music">
-    <i class="fa-solid fa-music"></i>
-  </button>
 
   <canvas id="particles-canvas"></canvas>
 
@@ -805,7 +770,7 @@
       const ctx    = canvas.getContext('2d');
       let W, H, particles;
 
-      const COUNT = 150;
+      const COUNT = 60;
 
       function resize() {
         W = canvas.width  = window.innerWidth;
@@ -823,6 +788,8 @@
         }));
       }
 
+      let animFrame;
+
       function draw() {
         ctx.clearRect(0, 0, W, H);
         particles.forEach(p => {
@@ -838,8 +805,16 @@
           if (p.x < -5)    p.x = W + 5;
           if (p.x > W + 5) p.x = -5;
         });
-        requestAnimationFrame(draw);
+        animFrame = requestAnimationFrame(draw);
       }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          cancelAnimationFrame(animFrame);
+        } else {
+          animFrame = requestAnimationFrame(draw);
+        }
+      });
 
       window.addEventListener('resize', () => { resize(); createParticles(); });
       resize();
@@ -869,8 +844,6 @@
 
     const overlay      = document.getElementById('overlay');
     const bgMusic      = document.getElementById('bg-music');
-    const musicToggle  = document.getElementById('music-toggle');
-    const musicToggleIcon = musicToggle.querySelector('i');
     
     const playerCover = document.getElementById('player-cover');
     const playerTitle = document.getElementById('player-title');
@@ -933,13 +906,9 @@
     function updatePlayState(isPlaying) {
       musicPlaying = isPlaying;
       if (isPlaying) {
-        musicToggle.classList.add('playing');
-        musicToggleIcon.className = 'fa-solid fa-music';
         playPauseIcon.className = 'fa-solid fa-pause';
         playerCover.classList.add('playing');
       } else {
-        musicToggle.classList.remove('playing');
-        musicToggleIcon.className = 'fa-solid fa-volume-xmark';
         playPauseIcon.className = 'fa-solid fa-play';
         playerCover.classList.remove('playing');
       }
@@ -947,30 +916,18 @@
 
     overlay.addEventListener('click', () => {
       overlay.classList.add('fade-out');
+
       setupAudioGraph();
       resumeAudioGraph();
       applyVolume(volumeSlider ? parseFloat(volumeSlider.value) : 0.35);
 
       bgMusic.play().then(() => {
-        musicToggle.style.display = 'flex';
         updatePlayState(true);
       }).catch(() => {
-        musicToggle.style.display = 'flex';
         updatePlayState(false);
       });
 
       overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
-    });
-
-    musicToggle.addEventListener('click', () => {
-      resumeAudioGraph();
-      if (musicPlaying) {
-        bgMusic.pause();
-        updatePlayState(false);
-      } else {
-        bgMusic.play();
-        updatePlayState(true);
-      }
     });
 
     btnPlayPause.addEventListener('click', () => {
